@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>LiveScoring</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{BASE_TAG}}
+
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/live-scoring.css">
+  </head>
+  <body>
+    <script>
+      window.LiveScoringENV = {{ENV}};
+      window.EmberENV = window.LiveScoringENV.EmberENV;
+    </script>
+    <script src="assets/vendor.js"></script>
+    <script src="assets/live-scoring.js"></script>
+    <script>
+      window.LiveScoring = require('live-scoring/app')['default'].create(LiveScoringENV.APP);
+    </script>
+  </body>
+</html>
