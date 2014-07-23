@@ -7,17 +7,22 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 puts 'DEFAULT USERS'
-user_list = [
-	['Brian Runnells', 'brian.runnells@gmail.com', 'climb514', 'admin'],
-]
-user_list.each do |name, email, password, role|
-  user = User.find_or_create_by_name name: name, email: email, password: password, password_confirmation: password
-  puts 'user: ' << user.name
-  user.add_role role
-end
+# user_list = [
+# 	['Brian Runnells', 'brian.runnells@gmail.com', 'climb514', 'admin'],
+# ]
+# user_list.each do |name, email, password, role|
+#   user = User.find_or_create_by(email: email, password: password, password_confirmation: password)
+#   puts 'user: ' << user.email
+#   #user.add_role role
+# end
 
-puts 'Disciplines'
-disciplines = ['Bouldering', 'Sport Climbing', 'Speed Climbing']
-disciplines.each do |name|
-  discipline = Discipline.create(name: name)
-end
+User.create([
+    {email: 'brian.runnells@gmail.com',
+     password: 'climb514', password_confirmation: 'climb514'}
+])
+
+# puts 'Disciplines'
+# disciplines = ['Bouldering', 'Sport Climbing', 'Speed Climbing']
+# disciplines.each do |name|
+#   discipline = Discipline.create(name: name)
+# end

@@ -171,6 +171,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  devise
   ember_devise_simple_auth
   factory_girl_rails
   guard
