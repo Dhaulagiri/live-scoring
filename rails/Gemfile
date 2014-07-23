@@ -28,6 +28,7 @@ gem 'spring',        group: :development
 
 gem 'active_model_serializers'
 gem 'rails-api'
+gem 'ember_devise_simple_auth'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
