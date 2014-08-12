@@ -1,1 +1,20 @@
-Here
+{{#link-to 'climbers.new' classNames="btn btn-default"}}
+  New Climber
+{{/link-to}}
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each}}
+      <tr>
+        <td>
+          {{link-to full_name 'climbers.show' this}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

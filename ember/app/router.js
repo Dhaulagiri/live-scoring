@@ -10,6 +10,7 @@ Router.map(function() {
 
   this.resource('climbers', function() {
     this.route('show', { path: ':slug' });
+    this.route('new');
   });
 
 });
