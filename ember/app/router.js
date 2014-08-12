@@ -9,7 +9,7 @@ Router.map(function() {
   this.route('protected');
 
   this.resource('climbers', function() {
-    this.route('show');
+    this.route('show', { path: ':slug' });
   });
 
 });

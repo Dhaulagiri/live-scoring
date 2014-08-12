@@ -1,3 +1,4 @@
 class ClimberSerializer < ActiveModel::Serializer
-  attributes :id, :first_name, :last_name, :gender, :dob
+  embed :ids, include: true
+  attributes :id, :first_name, :last_name, :gender, :dob, :slug
 end
