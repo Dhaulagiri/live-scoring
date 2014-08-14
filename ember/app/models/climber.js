@@ -1,12 +1,13 @@
 import DS from 'ember-data';
+import Ember from 'ember';
 
 export default DS.Model.extend({
-  first_name: DS.attr('string'),
-  last_name: DS.attr('string'),
+  firstName: DS.attr('string'),
+  lastName: DS.attr('string'),
   gender: DS.attr('string'),
   dob: DS.attr('date'),
   slug: DS.attr('string'),
-  full_name: function() {
-    return this.get('first_name') + ' ' + this.get('last_name');
-  }.property('first_name', 'last_name')
+  fullName: Ember.computed('firstName', 'lastName', function() {
+    return this.get('firstName') + ' ' + this.get('lastName');
+  })
 });
