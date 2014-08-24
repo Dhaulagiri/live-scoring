@@ -19,3 +19,11 @@ test('Should allow navigation to the climbers page from the landing page', funct
     });
   });
 });
+
+test('Should allow navigation to the create a climber page', function() {
+  visit('/climbers').then(function() {
+    click('a:contains("New Climber")').then(function() {
+      ok(true);
+    });
+  });
+});
