@@ -9,14 +9,14 @@
   </div>
   <div class="navbar-collapse collapse navbar-responsive-collapse">
     <ul class="nav navbar-nav">
-       <li>{{link-to 'Climbers' 'climbers'}}</li>
+        {{#link-to 'climbers' tagName="li" href=flase}}<a href="#">Climbers</a>{{/link-to}}
     </ul>
     <ul class="nav navbar-nav navbar-right">
       {{#if session.isAuthenticated}}
           <li>
             <a href="#" {{action invalidateSession}}>Logout</a>
       {{else}}
-          <li>{{#link-to 'login'}}Login{{/link-to}}</li>
+          {{#link-to 'login' tagName="li" href=false}}<a href="#">Login</a>{{/link-to}}
       {{/if}}
     </ul>
   </div>
