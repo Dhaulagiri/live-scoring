@@ -21,3 +21,4 @@ module.exports = app.toTree();
 
 app.import('vendor/bootstrap/dist/js/bootstrap.js');
 app.import('vendor/bootswatch/flatly/bootstrap.css');
+app.import('vendor/ember-easyForm/index.js');
