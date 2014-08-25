@@ -1,18 +1,34 @@
-{{fullName}}
-<h3>New Climber</h3>
+<div class="row">
+  <div class="col-lg-4 col-md-6">
+    <h3>Enter Climber Details</h3>
 
-{{#form-for model id="form-climber"}}
+    {{#form-for model id="form-climber"}}
 
-  {{input firstName class="foo"}}
-  {{input lastName}}
-  {{input gender}}
+      {{input firstName}}
+      {{input lastName}}
+      {{input gender}}
 
-  <button type="submit" class="btn btn-primary save-button" {{action "save" model}}>Save</button>
-  {{#if isNew}}
-    <button type="button" class="btn btn-default cancel-button" {{action "cancel" model}}>Cancel</button>
-  {{else}}
-    <button type="button" class="btn btn-default cancel-button" {{action "cancel" model}}>Cancel</button>
-    <button type="button" class="btn btn-danger delete-button" {{action "delete" model}}>Delete</button>
-  {{/if}}
+      <button type="submit" class="btn btn-primary save-button" {{action "save" model}}>Save</button>
+      {{#if isNew}}
+        <button type="button" class="btn btn-default cancel-button" {{action "cancel" model}}>Cancel</button>
+      {{else}}
+        <button type="button" class="btn btn-default cancel-button" {{action "cancel" model}}>Cancel</button>
+        <button type="button" class="btn btn-danger delete-button" {{action "delete" model}}>Delete</button>
+      {{/if}}
 
-{{/form-for}}
+    {{/form-for}}
+  </div>
+  <div class="col-lg-offset-1 col-lg-4 col-md-6">
+    <h3 class="text-center">{{fullName}}</h3>
+    <dl class="dl-horizontal">
+      <dt>First Name</dt>
+      <dd>{{firstName}}</dd>
+      <dt>First Name</dt>
+      <dd>{{lastName}}</dd>
+      <dt>Gender</dt>
+      <dd>{{gender}}</dd>
+      <dt>Age</dt>
+      <dd>{{dob}}</dd>
+    </dl>
+  </div>
+</div>

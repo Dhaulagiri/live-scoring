@@ -28,7 +28,7 @@ test('Should allow navigation to the create a climber page', function() {
   });
 });
 
-test('new button works', function() {
+test('New button works', function() {
   expect(3);
 
   visit('/climbers').then(function() {
@@ -41,10 +41,9 @@ test('new button works', function() {
   });
 });
 
-test('climber new renders', function() {
-  expect(7);
+test('Climber new renders', function() {
+  expect(6);
   visit('/climbers/new').then(function() {
-    equal(find('h3').text(), 'New Climber');
     equal(find('form#form-climber').length, 1);
     equal(find('input[name="firstName"]').val(), '');
     equal(find('input[name="lastName"]').val(), '');
@@ -55,7 +54,7 @@ test('climber new renders', function() {
   });
 });
 
-test('save button works', function() {
+test('Save button works', function() {
   expect(2);
 
   visit('/climbers/new').then(function() {
@@ -70,7 +69,7 @@ test('save button works', function() {
   });
 });
 
-test('cancel button works', function() {
+test('Cancel button works', function() {
   expect(4);
 
   visit('climbers').then(function() {
@@ -87,7 +86,7 @@ test('cancel button works', function() {
   });
 });
 
-test('navigating away rolls back changes', function() {
+test('Navigating away rolls back changes', function() {
   expect(4);
 
   visit('climbers').then(function() {
@@ -104,7 +103,7 @@ test('navigating away rolls back changes', function() {
   });
 });
 
-test('validator catches empty name field', function() {
+test('Validator catches empty first name field', function() {
   expect(3);
 
   visit('/climbers/new').then(function() {
