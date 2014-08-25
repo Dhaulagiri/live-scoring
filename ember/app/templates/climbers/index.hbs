@@ -1,11 +1,12 @@
-{{#link-to 'climbers.new' classNames="btn btn-default"}}
+{{#link-to 'climbers.new' classNames="btn btn-default new-button"}}
   New Climber
 {{/link-to}}
 
-<table class="table table-striped">
+<table class="table table-striped" id="climbers-table">
   <thead>
     <tr>
       <th>Name</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -13,6 +14,10 @@
       <tr>
         <td>
           {{link-to fullName 'climbers.show' this}}
+        </td>
+        <td>
+          <button type="button" class="btn btn-default edit-button" {{action "edit" this}}>Edit</button>
+          <button type="button" class="btn btn-danger delete-button" {{action "delete" this}}>Delete</button>
         </td>
       </tr>
     {{/each}}

@@ -10,9 +10,9 @@ Router.map(function() {
 
   this.resource('climbers', function() {
     this.route('show', { path: ':slug' });
+    this.route('edit', { path: '/:slug/edit' });
     this.route('new');
   });
-
 });
 
 export default Router;
