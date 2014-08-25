@@ -5,8 +5,8 @@ export default Ember.Route.extend({
     return this.store.find('climber');
   },
   actions: {
-    edit: function(product) {
-      this.transitionTo('climbers.edit', product);
+    edit: function(model) {
+      this.transitionTo('climbers.edit', model);
     },
     save: function(model) {
       var _this = this;
