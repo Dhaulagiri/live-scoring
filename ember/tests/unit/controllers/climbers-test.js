@@ -1,6 +1,6 @@
 import { test, moduleFor } from 'ember-qunit';
 
-moduleFor('controller:climber', 'ClimbersController', {
+moduleFor('controller:climbers', 'ClimbersController', {
   // Specify the other units that are required for this test.
   // needs: ['controller:foo']
 });
