@@ -4,7 +4,8 @@ class Climber < ActiveRecord::Base
 
   def slug_candidates
     [
-      [:first_name, :last_name]
+      [:first_name, :last_name],
+      [:first_name, :middle_name, :last_name]
     ]
   end
 

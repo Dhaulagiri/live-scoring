@@ -4,6 +4,7 @@ import Ember from 'ember';
 
 var ClimberModel = DS.Model.extend(Ember.Validations.Mixin, {
   firstName: DS.attr('string'),
+  middleName: DS.attr('string'),
   lastName: DS.attr('string'),
   gender: DS.attr('string'),
   dob: DS.attr('date'),
@@ -18,10 +19,16 @@ var ClimberModel = DS.Model.extend(Ember.Validations.Mixin, {
     // TODO - This seems necessary on new records
     // Try to figure out a different way of handling this
     var firstName = this.get('firstName') ? this.get('firstName') : '';
+    var middleName = this.get('middleName') ? this.get('middleName') : '';
     var lastName = this.get('lastName') ? this.get('lastName') : '';
 
-    return firstName + " " + lastName;
-  }.property('firstName', 'lastName'),
+    if (middleName !== "") {
+      return firstName + " " + middleName + " " + lastName;
+    } else {
+      return firstName + " " + lastName;
+    }
+
+  }.property('firstName', 'middleName', 'lastName'),
 
   validations: {
       firstName: {

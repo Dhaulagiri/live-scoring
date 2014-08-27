@@ -10,6 +10,7 @@ RSpec.describe Climber, :type => :model do
   subject { @climber }
 
   it { should respond_to(:first_name) }
+  it { should respond_to(:middle_name) }
   it { should respond_to(:last_name) }
   it { should respond_to(:gender) }
   it { should respond_to(:dob) }

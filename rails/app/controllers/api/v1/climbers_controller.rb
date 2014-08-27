@@ -55,6 +55,6 @@ class Api::V1::ClimbersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def climber_params
-      params.require(:climber).permit(:first_name, :last_name, :dob, :gender)
+      params.require(:climber).permit(:first_name, :middle_name, :last_name, :dob, :gender)
     end
 end

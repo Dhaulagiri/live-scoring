@@ -24,6 +24,7 @@ module('Integration - Climbers Page', {
       {
         id: 3,
         firstName: 'Dave',
+        middleName: 'Ethan',
         lastName: 'Graham',
         slug: 'dave-graham',
         gender: 'Male'
@@ -79,7 +80,7 @@ test('Should list all climbers', function() {
   visit('/climbers').then(function() {
     equal(find('a:contains("Lynn Hill")').length, 1);
     equal(find('a:contains("Chris Sharma")').length, 1);
-    equal(find('a:contains("Dave Graham")').length, 1);
+    equal(find('a:contains("Dave Ethan Graham")').length, 1);
   });
 });
 
@@ -114,10 +115,11 @@ test('New button works', function() {
 });
 
 test('Climber new renders', function() {
-  expect(6);
+  expect(7);
   visit('/climbers/new').then(function() {
     equal(find('form#form-climber').length, 1);
     equal(find('input[name="firstName"]').val(), '');
+    equal(find('input[name="middleName"]').val(), '');
     equal(find('input[name="lastName"]').val(), '');
     equal(find('input[name="gender"]').val(), '');
     equal(find('form#form-climber button.save-button').length, 1);
