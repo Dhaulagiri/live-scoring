@@ -9,6 +9,11 @@ var ClimberModel = DS.Model.extend(Ember.Validations.Mixin, {
   dob: DS.attr('date'),
   slug: DS.attr('string'),
 
+  // To identify html tag for a Climber.
+  htmlID: function() {
+    return 'climber' + this.get('id');
+  }.property('id'),
+
   fullName: function() {
     // TODO - This seems necessary on new records
     // Try to figure out a different way of handling this
@@ -23,6 +28,9 @@ var ClimberModel = DS.Model.extend(Ember.Validations.Mixin, {
         presence: true
       },
       lastName: {
+        presence: true
+      },
+      gender: {
         presence: true
       }
     }
