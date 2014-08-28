@@ -6,7 +6,7 @@ var ClimberModel = DS.Model.extend(Ember.Validations.Mixin, {
   firstName: DS.attr('string'),
   middleName: DS.attr('string'),
   lastName: DS.attr('string'),
-  gender: DS.attr('string'),
+  gender: DS.belongsTo('gender'),
   dob: DS.attr('date'),
   slug: DS.attr('string'),
 
@@ -16,7 +16,7 @@ var ClimberModel = DS.Model.extend(Ember.Validations.Mixin, {
   }.property('id'),
 
   fullName: function() {
-    // TODO - This seems necessary on new records
+    // TODO - This seems necessary on new records since the fields are blank on creation
     // Try to figure out a different way of handling this
     var firstName = this.get('firstName') ? this.get('firstName') : '';
     var middleName = this.get('middleName') ? this.get('middleName') : '';

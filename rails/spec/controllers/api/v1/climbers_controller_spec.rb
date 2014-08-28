@@ -5,8 +5,10 @@ RSpec.describe Api::V1::ClimbersController, :type => :controller do
   # This should return the minimal set of attributes required to create a valid
   # Climber. As you add validations to Climber, be sure to
   # adjust the attributes here as well.
+  let(:gender) { FactoryGirl.create(:gender) }
   let(:valid_attributes) {
-     { first_name: "Test", last_name: "Climber", gender: "M" }
+     { first_name: "Test", middle_name: "Foo", last_name: "Climber",
+        gender_id: gender.id }
   }
 
   let(:invalid_attributes) {

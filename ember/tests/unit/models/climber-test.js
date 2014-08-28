@@ -2,7 +2,7 @@ import { test, moduleForModel } from 'ember-qunit';
 
 moduleForModel('climber', 'Climber', {
   // Specify the other units that are required for this test.
-  needs: []
+  needs: ['model:gender']
 });
 
 test('it exists', function() {

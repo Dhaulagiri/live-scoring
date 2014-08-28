@@ -12,14 +12,14 @@ module('Integration - Climbers Page', {
         firstName: 'Lynn',
         lastName: 'Hill',
         slug: 'lynn-hill',
-        gender: 'Male'
+        gender_id: 2
       },
       {
         id: 2,
         firstName: 'Chris',
         lastName: 'Sharma',
         slug: 'chris-sharma',
-        gender: 'Male'
+        gender_id: 1
       },
       {
         id: 3,
@@ -27,13 +27,30 @@ module('Integration - Climbers Page', {
         middleName: 'Ethan',
         lastName: 'Graham',
         slug: 'dave-graham',
-        gender: 'Male'
+        gender_id: 1
+      }
+    ];
+
+    var genders = [
+      {
+        id: 1,
+        name: "Male",
+        sex: "M"
+      },
+      {
+        id: 2,
+        name: "Female",
+        sex: "F"
       }
     ];
 
     server = new Pretender(function() {
       this.get('/api/v1/climbers', function(request) {
         return [200, {"Content-Type": "application/json"}, JSON.stringify({climbers: climbers})];
+      });
+
+      this.get('/api/v1/genders', function(request) {
+        return [200, {"Content-Type": "application/json"}, JSON.stringify({genders: genders})];
       });
 
       this.get('/api/v1/climbers/:slug', function(request) {
@@ -121,7 +138,7 @@ test('Climber new renders', function() {
     equal(find('input[name="firstName"]').val(), '');
     equal(find('input[name="middleName"]').val(), '');
     equal(find('input[name="lastName"]').val(), '');
-    equal(find('input[name="gender"]').val(), '');
+    equal(find('select[name="gender"]').val(), '');
     equal(find('form#form-climber button.save-button').length, 1);
     equal(find('form#form-climber button.cancel-button').length, 1);
     visit('/climbers'); // To cancel new
@@ -144,17 +161,17 @@ test('Edit button works', function() {
 
 test('Save button works', function() {
   expect(2);
-
-  visit('/climbers/new').then(function() {
-    fillIn('input[name="firstName"]', 'FirstName');
-    fillIn('input[name="lastName"]', 'LastName');
-    fillIn('input[name="gender"]', 'Gender');
-    click('#form-climber .save-button').then(function() {
-      equal(currentRouteName(), 'climbers.show');
-      equal(currentPath(), 'climbers.show');
-      // TODO - Fill this in once we know what the resulting route will be
+  visit('/climbers/new')
+    .fillIn('input[name="firstName"]', 'FirstName')
+    .fillIn('input[name="lastName"]', 'LastName')
+    .fillIn('select[name="gender"]', 1)
+    .then(function() {
+      click('#form-climber .save-button').then(function() {
+        equal(currentRouteName(), 'climbers.show');
+        equal(currentPath(), 'climbers.show');
+        // TODO - Fill this in once we know what the resulting route will be
+      });
     });
-  });
 });
 
 test('Cancel button works', function() {
