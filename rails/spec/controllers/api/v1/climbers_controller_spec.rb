@@ -24,7 +24,7 @@ RSpec.describe Api::V1::ClimbersController, :type => :controller do
     it "assigns all climbers as @climbers" do
       climber = Climber.create! valid_attributes
       get :index, {}, valid_session
-      assigns(:climbers).should eq([climber])
+      expect(assigns(:climbers)).to eq([climber])
     end
   end
 
@@ -32,7 +32,7 @@ RSpec.describe Api::V1::ClimbersController, :type => :controller do
     it "assigns the requested climber as @climber" do
       climber = Climber.create! valid_attributes
       get :show, {:id => climber.to_param}, valid_session
-      assigns(:climber).should eq(climber)
+      expect(assigns(:climber)).to eq(climber)
     end
   end
 
@@ -46,17 +46,17 @@ RSpec.describe Api::V1::ClimbersController, :type => :controller do
 
       it "assigns a newly created climber as @climber" do
         post :create, {:climber => valid_attributes}, valid_session
-        assigns(:climber).should be_a(Climber)
-        assigns(:climber).should be_persisted
+        expect(assigns(:climber)).to be_a(Climber)
+        expect(assigns(:climber)).to be_persisted
       end
     end
 
     describe "with invalid params" do
       it "assigns a newly created but unsaved climber as @climber" do
         # Trigger the behavior that occurs when invalid params are submitted
-        Climber.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Climber).to receive(:save).and_return(false)
         post :create, {:climber => { "first_name" => "invalid value" }}, valid_session
-        assigns(:climber).should be_a_new(Climber)
+        expect(assigns(:climber)).to be_a_new(Climber)
       end
     end
   end
@@ -69,14 +69,14 @@ RSpec.describe Api::V1::ClimbersController, :type => :controller do
         # specifies that the Climber created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Climber.any_instance.should_receive(:update).with({ "first_name" => "MyString" })
+        allow_any_instance_of(Climber).to receive(:update).with({ "first_name" => "MyString" })
         put :update, {:id => climber.to_param, :climber => { "first_name" => "MyString" }}, valid_session
       end
 
       it "assigns the requested climber as @climber" do
         climber = Climber.create! valid_attributes
         put :update, {:id => climber.to_param, :climber => valid_attributes}, valid_session
-        assigns(:climber).should eq(climber)
+        expect(assigns(:climber)).to eq(climber)
       end
     end
 
@@ -84,9 +84,9 @@ RSpec.describe Api::V1::ClimbersController, :type => :controller do
       it "assigns the climber as @climber" do
         climber = Climber.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        Climber.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(Climber).to receive(:save).and_return(false)
         put :update, {:id => climber.to_param, :climber => { "first_name" => "invalid value" }}, valid_session
-        assigns(:climber).should eq(climber)
+        expect(assigns(:climber)).to eq(climber)
       end
     end
   end
