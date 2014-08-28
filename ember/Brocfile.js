@@ -17,9 +17,9 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
-module.exports = app.toTree();
+app.import('bower_components/bootstrap/dist/js/bootstrap.js');
+app.import('bower_components/bootswatch/flatly/bootstrap.css');
+app.import('bower_components/ember-easyForm/index.js');
+app.import('bower_components/ember-validations/index.js');
 
-app.import('vendor/bootstrap/dist/js/bootstrap.js');
-app.import('vendor/bootswatch/flatly/bootstrap.css');
-app.import('vendor/ember-easyForm/index.js');
-app.import('vendor/ember-validations/index.js');
+module.exports = app.toTree();
