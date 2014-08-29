@@ -21,5 +21,7 @@ app.import('bower_components/bootstrap/dist/js/bootstrap.js');
 app.import('bower_components/bootswatch/flatly/bootstrap.css');
 app.import('bower_components/ember-easyForm/index.js');
 app.import('bower_components/ember-validations/index.js');
+app.import('bower_components/chosen-bower/chosen.jquery.js');
+app.import('bower_components/chosen-bower/chosen.css');
 
 module.exports = app.toTree();
