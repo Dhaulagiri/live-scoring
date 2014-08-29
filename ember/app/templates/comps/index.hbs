@@ -1,0 +1,27 @@
+{{#link-to 'comps.new' classNames="btn btn-default new-button"}}
+  New Comp
+{{/link-to}}
+
+<table class="table table-striped" id="compss-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each}}
+      <tr {{bind-attr id=this.htmlID}}>
+        <td>
+          {{link-to name 'comps.show' this}}
+        </td>
+        <td>{{date}}</td>
+        <td>
+          <button type="button" class="btn btn-default edit-button" {{action "edit" this}}>Edit</button>
+          <button type="button" class="btn btn-danger delete-button" {{action "delete" this}}>Delete</button>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

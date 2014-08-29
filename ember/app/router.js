@@ -13,6 +13,13 @@ Router.map(function() {
     this.route('edit', { path: '/:slug/edit' });
     this.route('new');
   });
+  
+  this.resource('comps', function() {
+    this.route('show', { path: ':slug' });
+    this.route('edit', { path: '/:slug/edit' });
+    this.route('new');
+  });
+
 });
 
 export default Router;

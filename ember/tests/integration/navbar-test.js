@@ -15,6 +15,7 @@ module('Integration - Navbar', {
 test('Should have the proper links', function() {
   visit('/').then(function() {
     ok('a:contains("Climbers")');
+    ok('a:contains("Comps")');
     ok('a:contains("Login")');
     ok('a:contains("Comp Scoring")');
   });
