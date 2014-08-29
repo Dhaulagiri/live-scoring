@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default {
   name: 'easyForm',
   initialize: function() {
-
+    
     Ember.EasyForm.Input.reopen({
       errorsChanged: function() {
         this.set('hasFocusedOut', true);
@@ -42,7 +42,7 @@ export default {
     });
     // And add the same classes to Select inputs
     Ember.Select.reopen({
-      classNames: ['form-control', 'chosen']
+      classNames: ['form-control', 'chosen', 'input-lg'],
     });
     // Make input fields larger
     Ember.TextField.reopen({
