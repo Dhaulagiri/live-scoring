@@ -1,1 +1,6 @@
-Index
+<h1 class="text-center">Upcoming Comps</h1>
+{{#each comps}}
+  <h3 class="text-center">
+    {{link-to name 'comps.show' this}} on {{formatted-date date}}
+  </h3>
+{{/each}}
