@@ -16,3 +16,10 @@ Discipline.create([
   { name: 'Sport Climbing' },
   { name: 'Speed Climbing' }
 ])
+
+puts 'Rounds'
+Round.create([
+  { name: 'Qualifiers' },
+  { name: 'Semi-finals' },
+  { name: 'Finals' }
+])
