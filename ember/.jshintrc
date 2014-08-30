@@ -3,7 +3,8 @@
     "document": true,
     "window": true,
     "-Promise": true,
-    "LiveScoringENV": true
+    "LiveScoringENV": true,
+    "moment": true
   },
   "browser" : true,
   "boss" : true,

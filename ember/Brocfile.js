@@ -23,5 +23,6 @@ app.import('bower_components/ember-easyForm/index.js');
 app.import('bower_components/ember-validations/index.js');
 app.import('bower_components/chosen-bower/chosen.jquery.js');
 app.import('bower_components/chosen-bower/chosen.css');
+app.import('bower_components/moment/moment.js');
 
 module.exports = app.toTree();
