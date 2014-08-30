@@ -7,6 +7,7 @@ Rails.application.routes.draw do
         resources :climbers, except: [:new, :edit]
         resources :comps, except: [:new, :edit]
         resources :genders, only: [:index]
+        resources :disciplines, only: [:index]
       end
     end
 end

@@ -9,3 +9,10 @@ Gender.create([
   { name: 'Female', sex: 'F' },
   { name: 'Male', sex: 'M' }
 ])
+
+puts 'Disciplines'
+Discipline.create([
+  { name: 'Bouldering' },
+  { name: 'Sport Climbing' },
+  { name: 'Speed Climbing' }
+])
