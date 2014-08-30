@@ -10,17 +10,20 @@ module('Integration - Comps Page', {
       {
         id: 1,
         name: 'Portland Boulder Rally',
-        date: '2014-09-01'
+        date: '2014-09-01',
+        slug: 'portland-boulder-rally-2014-09-01'
       },
       {
         id: 2,
         name: 'ABS Nationals',
-        date: '2014-10-01'
+        date: '2014-10-01',
+        slug: 'abs-nationals-2014-10-01'
       },
       {
         id: 3,
         name: 'SCS Nationals',
-        date: '2015-03-01'
+        date: '2015-03-01',
+        slug: 'scs-nationals-2015-03-01'
       }
     ];
 
@@ -89,9 +92,9 @@ test('Should be able to navigate to a comp page', function() {
 });
 
 test('Should be able visit a comp page', function() {
-  visit('/comps/1').then(function() {
-    equal(find('h3').text(), 'Portland Boulder Rally');
-  });
+   visit('/comps/portland-boulder-rally-2014-09-01').then(function() {
+     equal(find('h3').text(), 'Portland Boulder Rally');
+   });
 });
 
 test('New button works', function() {

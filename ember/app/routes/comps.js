@@ -1,9 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model: function() {
-    return this.store.find('comp');
-  },
   actions: {
     edit: function(model) {
       this.transitionTo('comps.edit', model);

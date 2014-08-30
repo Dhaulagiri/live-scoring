@@ -113,7 +113,7 @@ test('Should be able to navigate to a climber page', function() {
 });
 
 test('Should be able visit a climber page', function() {
-  visit('/climbers/1').then(function() {
+  visit('/climbers/lynn-hill').then(function() {
     equal(find('h3').text(), 'Lynn Hill');
   });
 });
