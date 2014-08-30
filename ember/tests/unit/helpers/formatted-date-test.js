@@ -14,3 +14,10 @@ test('it returns a formatted date', function() {
   var expected = "July 8, 2006";
   equal(result, expected);
 });
+
+test('it handles null dates', function() {
+  var date = null;
+  var result = formattedDate(date);
+  var expected = "None";
+  equal(result, expected);
+});

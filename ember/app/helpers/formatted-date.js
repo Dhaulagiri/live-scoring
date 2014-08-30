@@ -1,7 +1,11 @@
 import Ember from 'ember';
 
 function formattedDate(value) {
-  return moment(value).format("LL");
+  if (value === null || value === '') {
+        return "None";
+    } else {
+      return moment(value).format("LL");
+  }
 }
 
 export { formattedDate };
