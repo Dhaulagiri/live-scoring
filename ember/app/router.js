@@ -13,11 +13,17 @@ Router.map(function() {
     this.route('edit', { path: '/:slug/edit' });
     this.route('new');
   });
-  
+
   this.resource('comps', function() {
     this.route('show', { path: ':slug' });
     this.route('edit', { path: '/:slug/edit' });
     this.route('new');
+
+    this.resource('events', { path: ':slug/events'}, function() {
+      this.resource('event', { path: ':slug' });
+      this.route('edit', { path: '/:slug/edit' });
+      this.route('new');
+    });
   });
 
 });

@@ -1,0 +1,30 @@
+<h2>Events</h2>
+{{#if this.events}}
+<table class="table table-striped" id="events-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Discipline</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each this.events}}
+      <tr>
+        <td>
+          {{link-to name 'event' this}}
+        </td>
+        <td>{{gender}}</td>
+        <td>{{discipline}}</td>
+        <td>
+          <!-- <button type="button" class="btn btn-danger delete-button" {{action "delete" this}}>Delete</button> -->
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{else}}
+  No events
+{{/if}}
+{{outlet}}

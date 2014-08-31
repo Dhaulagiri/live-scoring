@@ -1,8 +1,8 @@
 import { test, moduleForModel } from 'ember-qunit';
 
-moduleForModel('comp', 'Comp', {
+moduleForModel('event', 'Event', {
   // Specify the other units that are required for this test.
-  needs: ['model:event']
+  needs: []
 });
 
 test('it exists', function() {
