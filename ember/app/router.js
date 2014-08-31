@@ -20,8 +20,8 @@ Router.map(function() {
     this.route('new');
 
     this.resource('events', { path: ':slug/events'}, function() {
-      this.resource('event', { path: ':slug' });
-      this.route('edit', { path: '/:slug/edit' });
+      this.route('show', {path: '/:event_id'});
+      this.route('edit');
       this.route('new');
     });
   });
