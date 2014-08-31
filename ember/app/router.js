@@ -15,15 +15,15 @@ Router.map(function() {
   });
 
   this.resource('comps', function() {
-    this.route('show', { path: ':slug' });
+    this.route('show', { path: ':slug' }, function () {
+      this.resource('events', function() {
+        this.resource('event', {path: '/:event_id'});
+        this.route('edit');
+        this.route('new');
+      });
+    });
     this.route('edit', { path: '/:slug/edit' });
     this.route('new');
-
-    this.resource('events', { path: ':slug/events'}, function() {
-      this.route('show', {path: '/:event_id'});
-      this.route('edit');
-      this.route('new');
-    });
   });
 
 });
