@@ -1,4 +1,5 @@
 import { test, moduleForModel } from 'ember-qunit';
+import Ember from 'ember';
 
 moduleForModel('climber', 'Climber', {
   // Specify the other units that are required for this test.
@@ -20,4 +21,12 @@ test('fullName', function() {
   });
 
   equal(climber.get('fullName'), "Chris Freaking Sharma");
+});
+test('gender relationship', function() {
+  var Climber = this.store().modelFor('climber');
+  var relationship = Ember.get(Climber, 'relationshipsByName').get('gender');
+
+  equal(relationship.key, 'gender');
+  equal(relationship.kind, 'belongsTo');
+
 });

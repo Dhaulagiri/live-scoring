@@ -9,4 +9,6 @@ class Comp < ActiveRecord::Base
   end
 
   validates_presence_of :name, :date
+
+  has_many :events
 end
