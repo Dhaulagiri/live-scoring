@@ -11,7 +11,8 @@ module('Integration - Comps Page', {
         id: 1,
         name: 'Portland Boulder Rally',
         date: '2014-09-01',
-        slug: 'portland-boulder-rally-2014-09-01'
+        slug: 'portland-boulder-rally-2014-09-01',
+        event_ids: [1, 2]
       },
       {
         id: 2,
@@ -27,6 +28,19 @@ module('Integration - Comps Page', {
       }
     ];
 
+    var events = [
+      {
+        id: 1,
+        name: "Mens Open",
+        comp_id: 1
+      },
+      {
+        id: 2,
+        name: "Womens Open",
+        comp_id: 1
+      }
+    ];
+
     server = new Pretender(function() {
       this.get('/api/v1/comps', function(request) {
         return [200, {"Content-Type": "application/json"}, JSON.stringify({comps: comps})];
@@ -39,7 +53,13 @@ module('Integration - Comps Page', {
           }
         });
 
-        return [200, {"Content-Type": "application/json"}, JSON.stringify({comp: comp})];
+        var compEvents = events.filter(function(event) {
+          if (event.comp_id === comp.id) {
+            return true;
+          }
+        });
+
+        return [200, {"Content-Type": "application/json"}, JSON.stringify({comp: comp, events: compEvents})];
       });
 
       this.post('/api/v1/comps', function(request) {
@@ -84,16 +104,16 @@ test('Should be able to navigate to a comp page', function() {
   expect(3);
   visit('/comps').then(function() {
     click('a:contains("Portland Boulder Rally")').then(function() {
-      equal(find('h3').text(), 'Portland Boulder Rally');
-      equal(currentRouteName(), 'comps.show');
-      equal(currentPath(), 'comps.show');
+      equal(find('h1').text(), 'Portland Boulder Rally');
+      equal(currentRouteName(), 'comps.show.index');
+      equal(currentPath(), 'comps.show.index');
     });
   });
 });
 
 test('Should be able visit a comp page', function() {
    visit('/comps/portland-boulder-rally-2014-09-01').then(function() {
-     equal(find('h3').text(), 'Portland Boulder Rally');
+     equal(find('h1').text(), 'Portland Boulder Rally');
    });
 });
 
@@ -197,3 +217,19 @@ test('Navigating away rolls back changes', function() {
 //     });
 //   });
 // });
+
+test('Should render events', function() {
+  visit('/comps/portland-boulder-rally-2014-09-01').then(function() {
+    equal(find('h2').text(), 'Events');
+    equal(find('a:contains("Mens Open")').length, 1);
+    equal(find('a:contains("Womens Open")').length, 1);
+  });
+});
+
+test('Should display event detail when selected', function() {
+  visit('/comps/portland-boulder-rally-2014-09-01').then(function() {
+    click(find('a:contains("Mens Open")')).then(function() {
+      equal(find('h3').text(), 'Mens Open');
+    });
+  });
+});

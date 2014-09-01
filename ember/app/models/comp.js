@@ -5,7 +5,7 @@ export default DS.Model.extend(Ember.Validations.Mixin, {
   name: DS.attr('string'),
   date: DS.attr('date'),
   slug: DS.attr('string'),
-  events: DS.hasMany('event'),
+  events: DS.hasMany('event', { async: true }),
 
   validations: {
       name: {
