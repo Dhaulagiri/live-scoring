@@ -11,6 +11,9 @@ RSpec.describe Event, :type => :model do
 
   it { should respond_to(:name) }
   it { should respond_to(:slug) }
+  it { should belong_to(:comp) }
+  it { should belong_to(:gender) }
+  it { should belong_to(:discipline) }
 
   it { should be_valid }
 

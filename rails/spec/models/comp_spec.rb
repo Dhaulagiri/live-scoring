@@ -12,6 +12,7 @@ RSpec.describe Comp, :type => :model do
   it { should respond_to(:name) }
   it { should respond_to(:date) }
   it { should respond_to(:slug) }
+  it { should have_many(:events).dependent(:destroy) }
 
   it { should be_valid }
 

@@ -10,5 +10,5 @@ class Comp < ActiveRecord::Base
 
   validates_presence_of :name, :date
 
-  has_many :events
+  has_many :events, dependent: :destroy
 end
