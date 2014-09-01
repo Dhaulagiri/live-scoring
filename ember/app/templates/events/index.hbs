@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-lg-3">
+  <div class="col-lg-4">
     <h2>Events</h2>
     {{#if this.events}}
     <table class="table table-striped" id="events-table">
@@ -8,7 +8,6 @@
           <th>Name</th>
           <th>Gender</th>
           <th>Discipline</th>
-          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -19,9 +18,6 @@
             </td>
             <td>{{gender.name}}</td>
             <td>{{discipline.name}}</td>
-            <td>
-              <!-- <button type="button" class="btn btn-danger delete-button" {{action "delete" this}}>Delete</button> -->
-            </td>
           </tr>
         {{/each}}
       </tbody>
@@ -29,8 +25,12 @@
     {{else}}
       No events
     {{/if}}
+
+    {{#link-to 'events.new' classNames="btn btn-default new-button"}}
+      New Event
+    {{/link-to}}
   </div>
-  <div class="col-lg-9">
+  <div class="col-lg-8">
     {{outlet}}
   </div>
 </div>

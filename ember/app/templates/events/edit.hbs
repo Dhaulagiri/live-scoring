@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h3>Enter Event Details</h3>
+    {{#form-for model id="form-event"}}
+
+      {{input name}}
+      {{input gender as='select'
+         collection="controller.genders"
+         selection="gender"
+         optionValuePath="content.id"
+         optionLabelPath="content.name"
+         prompt="Select Gender"
+      }}
+
+      {{input gender as='select'
+         collection="controller.disciplines"
+         selection="discipline"
+         optionValuePath="content.id"
+         optionLabelPath="content.name"
+         prompt="Select Discipline"
+      }}
+
+      <button type="submit" class="btn btn-primary save-button" {{action "save" model}}>Save</button>
+      {{#if isNew}}
+        <button type="button" class="btn btn-default cancel-button" {{action "cancel" model}}>Cancel</button>
+      {{else}}
+        <button type="button" class="btn btn-default cancel-button" {{action "cancel" model}}>Cancel</button>
+        <button type="button" class="btn btn-danger delete-button" {{action "delete" model}}>Delete</button>
+      {{/if}}
+
+    {{/form-for}}
+  </div>
+</div>
