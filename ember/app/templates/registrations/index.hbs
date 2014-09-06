@@ -1,0 +1,28 @@
+<h4>Currently Registered</h4>
+{{#link-to 'registrations.new' classNames="btn btn-default new-button"}}
+  New Registration
+{{/link-to}}
+
+{{#if this.registrations}}
+  <table class="table table-striped" id="registrations-table">
+    <thead>
+      <tr>
+        <th>Climber</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each this.registrations}}
+        <tr>
+          <td>
+            {{link-to climber.fullName 'climbers.show' this.climber}}
+          </td>
+          <td><button type="button" class="btn btn-danger delete-button" {{action "delete" this}}>Delete</button></td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  Nobody is registered yet
+{{/if}}
+<br/>

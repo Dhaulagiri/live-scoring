@@ -21,8 +21,9 @@ export default Ember.Route.extend({
       this.transitionTo('events.index');
     },
     delete: function(model) {
-      model.destroyRecord();
-      this.transitionTo('events');
+      debugger
+      //model.destroyRecord();
+      //this.transitionTo('events');
     }
   }
 });

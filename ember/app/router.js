@@ -26,6 +26,10 @@ Router.map(function() {
     this.route('new');
   });
 
+  this.resource('registrations', function() {
+    this.route('new');
+  });
+  this.route('events/show');
 });
 
 export default Router;

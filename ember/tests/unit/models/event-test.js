@@ -3,7 +3,7 @@ import Ember from 'ember';
 
 moduleForModel('event', 'Event', {
   // Specify the other units that are required for this test.
-  needs: ['model:comp', 'model:discipline', 'model:gender']
+  needs: ['model:comp', 'model:discipline', 'model:gender', 'model:registration', 'model:round']
 });
 
 test('it exists', function() {
@@ -34,4 +34,12 @@ test('gender relationship', function() {
 
   equal(relationship.key, 'gender');
   equal(relationship.kind, 'belongsTo');
+});
+
+test('registration relationship', function() {
+  var Event = this.store().modelFor('event');
+  var relationship = Ember.get(Event, 'relationshipsByName').get('registrations');
+
+  equal(relationship.key, 'registrations');
+  equal(relationship.kind, 'hasMany');
 });

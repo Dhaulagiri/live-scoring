@@ -8,6 +8,7 @@ export default DS.Model.extend(Ember.Validations.Mixin, {
   comp: DS.belongsTo('comp'),
   discipline: DS.belongsTo('discipline'),
   rounds: DS.hasMany('round'),
+  registrations: DS.hasMany('registration'),
   gender: DS.belongsTo('gender')//,
 
   // validations: {

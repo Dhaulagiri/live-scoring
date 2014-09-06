@@ -8,6 +8,7 @@ export default DS.Model.extend(Ember.Validations.Mixin, {
   gender: DS.belongsTo('gender'),
   dob: DS.attr('date'),
   slug: DS.attr('string'),
+  registrations: DS.hasMany('registration'),
 
   // To identify html tag for a Climber.
   htmlID: function() {

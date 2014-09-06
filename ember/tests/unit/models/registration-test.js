@@ -1,8 +1,8 @@
 import { test, moduleForModel } from 'ember-qunit';
 
-moduleForModel('round', 'Round', {
+moduleForModel('registration', 'Registration', {
   // Specify the other units that are required for this test.
-  needs: ['model:event']
+  needs: ['model:climber', 'model:event']
 });
 
 test('it exists', function() {

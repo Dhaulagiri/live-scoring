@@ -16,6 +16,7 @@ RSpec.describe Event, :type => :model do
   it { should belong_to(:discipline) }
   it { should have_many(:rounds).through(:event_rounds) }
   it { should have_many(:event_rounds).dependent(:destroy) }
+  it { should have_many(:registrations).dependent(:destroy) }
 
   it { should be_valid }
 

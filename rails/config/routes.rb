@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users, controllers: { sessions: 'sessions' }
 
   namespace :api do
@@ -11,7 +10,8 @@ Rails.application.routes.draw do
         resources :climbers, except: [:new, :edit]
         resources :events, except: [:new, :edit]
         resources :comps, except: [:new, :edit]
-
+        resources :registrations, except: [:new, :edit]
+        
       end
     end
 end

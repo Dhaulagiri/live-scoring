@@ -15,6 +15,7 @@ RSpec.describe Climber, :type => :model do
   it { should respond_to(:gender) }
   it { should respond_to(:dob) }
   it { should respond_to(:slug) }
+  it { should have_many(:registrations) }
 
   it { should be_valid }
 
