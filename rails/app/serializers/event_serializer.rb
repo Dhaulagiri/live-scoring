@@ -5,4 +5,5 @@ class EventSerializer < ActiveModel::Serializer
   has_one :comp
   has_one :discipline
   has_one :gender
+  has_many :rounds
 end

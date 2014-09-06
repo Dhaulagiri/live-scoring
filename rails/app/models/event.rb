@@ -11,6 +11,8 @@ class Event < ActiveRecord::Base
   belongs_to :comp
   belongs_to :discipline
   belongs_to :gender
+  has_many :rounds, through: :event_rounds
+  has_many :event_rounds, dependent: :destroy
 
   validates_presence_of :comp, :discipline, :gender, :name
 end

@@ -8,5 +8,8 @@ class Round < ActiveRecord::Base
     ]
   end
 
+  has_many :events, through: :event_rounds
+  has_many :event_rounds, :autosave => true
+  
   validates_presence_of :name
 end

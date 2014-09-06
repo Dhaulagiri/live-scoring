@@ -59,6 +59,7 @@ class Api::V1::EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
+      # TODO - Allow rounds through here for HABTM relationship
       params.require(:event).permit(:name, :comp_id, :discipline_id, :gender_id)
     end
 end
