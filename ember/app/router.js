@@ -17,7 +17,7 @@ Router.map(function() {
   this.resource('comps', function() {
     this.route('show', { path: ':slug' }, function () {
       this.resource('events', function() {
-        this.resource('event', {path: '/:event_id'});
+        this.route('show', { path: '/:event_id' });
         this.route('edit');
         this.route('new');
       });

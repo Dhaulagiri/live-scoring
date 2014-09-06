@@ -9,9 +9,8 @@ Rails.application.routes.draw do
         resources :rounds, only: [:index]
 
         resources :climbers, except: [:new, :edit]
-        resources :comps, except: [:new, :edit] do
-          resources :events, except: [:new, :edit]
-        end
+        resources :events, except: [:new, :edit]
+        resources :comps, except: [:new, :edit]
 
       end
     end

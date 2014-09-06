@@ -50,7 +50,7 @@ class Api::V1::EventsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_comp
-      @comp = Comp.find(params[:comp_id])
+      @comp = Comp.find(params[:event][:comp_id])
     end
 
     def set_event

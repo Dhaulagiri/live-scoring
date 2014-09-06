@@ -28,7 +28,7 @@ RSpec.describe Api::V1::EventsController, :type => :controller do
   describe "GET index" do
     it "assigns all events as @events" do
       event = Event.create! valid_attributes
-      get :index, { comp_id: event.comp.id }, valid_session
+      get :index, { :event => valid_attributes }, valid_session
       expect(assigns(:events)).to eq([event])
     end
   end
@@ -60,7 +60,7 @@ RSpec.describe Api::V1::EventsController, :type => :controller do
       it "assigns a newly created but unsaved event as @event" do
         # Trigger the behavior that occurs when invalid params are submitted
         allow_any_instance_of(Event).to receive(:save).and_return(false)
-        post :create, {comp_id: comp.id, :event => { "name" => "invalid value" }}, valid_session
+        post :create, { :event => { "name" => "invalid value", comp_id: comp.id }}, valid_session
         expect(assigns(:event)).to be_a_new(Event)
       end
     end
