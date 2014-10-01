@@ -19,11 +19,11 @@ export default Ember.Route.extend({
     },
     cancel: function() {
       this.transitionTo('events.index');
-    },
-    delete: function(model) {
-      debugger
-      //model.destroyRecord();
-      //this.transitionTo('events');
-    }
+    }//,
+    // delete: function(model) {
+    // //  debugger
+    //   //model.destroyRecord();
+    //   //this.transitionTo('events');
+    // }
   }
 });

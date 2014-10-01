@@ -16,10 +16,10 @@ export default Ember.Route.extend({
     // cancel: function() {
     //   this.transitionTo('comps.index');
     // },
-    delete: function(model) {
-      debugger
-      //model.destroyRecord();
-      //this.transitionTo('comps');
-    }
+    // delete: function(model) {
+    // //  debugger
+    //   //model.destroyRecord();
+    //   //this.transitionTo('comps');
+    // }
   }
 });
