@@ -5,10 +5,10 @@ export default DS.Model.extend(Ember.Validations.Mixin, {
   firstName: DS.attr('string'),
   middleName: DS.attr('string'),
   lastName: DS.attr('string'),
-  gender: DS.belongsTo('gender'),
+  gender: DS.belongsTo('gender', { async: true }),
   dob: DS.attr('date'),
   slug: DS.attr('string'),
-  registrations: DS.hasMany('registration'),
+  registrations: DS.hasMany('registration', { async: true }),
 
   // To identify html tag for a Climber.
   htmlID: function() {

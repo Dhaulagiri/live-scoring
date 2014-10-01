@@ -13,12 +13,13 @@
     <link rel="stylesheet" href="assets/live-scoring.css">
   </head>
   <body>
+    <script>
+      window.EmberENV = {{EMBER_ENV}};
+    </script>
     <script src="assets/vendor.js"></script>
     <script src="assets/live-scoring.js"></script>
     <script>
-      window.LiveScoringENV = require('live-scoring/config/environment')['default'];
-      window.EmberENV = window.LiveScoringENV.EmberENV;
-      window.LiveScoring = require('live-scoring/app')['default'].create(LiveScoringENV.APP);
+      window.LiveScoring = require('live-scoring/app')['default'].create({{APP_CONFIG}});
     </script>
   </body>
 </html>

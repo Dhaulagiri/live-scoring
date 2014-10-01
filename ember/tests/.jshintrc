@@ -34,6 +34,7 @@
     "fillIn",
     "click",
     "keyEvent",
+    "triggerEvent",
     "find",
     "findWithAssert",
     "wait",
@@ -45,7 +46,7 @@
     "currentURL",
     "currentPath",
     "currentRouteName",
-     "Pretender"
+    "Pretender"
   ],
   "node": false,
   "browser": false,

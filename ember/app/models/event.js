@@ -5,11 +5,11 @@ export default DS.Model.extend(Ember.Validations.Mixin, {
   name: DS.attr('string'),
   slug: DS.attr('string'),
 
-  comp: DS.belongsTo('comp'),
-  discipline: DS.belongsTo('discipline'),
-  rounds: DS.hasMany('round'),
-  registrations: DS.hasMany('registration'),
-  gender: DS.belongsTo('gender')//,
+  comp: DS.belongsTo('comp', { async: true }),
+  discipline: DS.belongsTo('discipline', { async: true }),
+  rounds: DS.hasMany('round', { async: true }),
+  registrations: DS.hasMany('registration', { async: true }),
+  gender: DS.belongsTo('gender', { async: true })//,
 
   // validations: {
   //     name: {

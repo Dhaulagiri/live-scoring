@@ -1,7 +1,8 @@
 import Ember from 'ember';
+import ENV from 'live-scoring/config/environment';
 
 var Router = Ember.Router.extend({
-  location: LiveScoringENV.locationType
+  location: ENV.locationType
 });
 
 Router.map(function() {
