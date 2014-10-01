@@ -3,7 +3,7 @@ import Ember from 'ember';
 
 moduleForModel('gender', 'Gender', {
   // Specify the other units that are required for this test.
-  needs: ['model:climber', 'model:event']
+  needs: ['model:climber', 'model:event', 'model:registration', 'model:comp', 'model:discipline', 'model:round']
 });
 
 test('it exists', function() {

@@ -2,7 +2,7 @@ import { test, moduleForModel } from 'ember-qunit';
 
 moduleForModel('round', 'Round', {
   // Specify the other units that are required for this test.
-  needs: ['model:event']
+  needs: ['model:event', 'model:comp', 'model:discipline', 'model:registration', 'model:gender']
 });
 
 test('it exists', function() {
