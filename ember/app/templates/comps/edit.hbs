@@ -5,8 +5,6 @@
     {{#form-for model id="form-comp"}}
 
       {{input name}}
-      <!-- {{input date as="date"}} -->
-
       <button type="submit" class="btn btn-primary save-button" {{action "save" model}}>Save</button>
       {{#if isNew}}
         <button type="button" class="btn btn-default cancel-button" {{action "cancel" model}}>Cancel</button>
