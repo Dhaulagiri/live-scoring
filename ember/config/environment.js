@@ -5,6 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'live-scoring',
     environment: environment,
     baseURL: '/',
+    firebase_instance: 'climbing-scoring',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -16,6 +17,12 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    contentSecurityPolicy: {
+      'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com",
+      'frame-src': "https://*.firebaseio.com",
+      'font-src': "'self' http://*.gstatic.com",
+      'style-src': "'self' http://*.googleapis.com",
     }
   };
 
