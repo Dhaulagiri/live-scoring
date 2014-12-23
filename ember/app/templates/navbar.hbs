@@ -12,5 +12,13 @@
         {{#link-to 'climbers' tagName="li" href=flase}}<a href="#">Climbers</a>{{/link-to}}
         {{#link-to 'comps' tagName="li" href=flase}}<a href="#">Comps</a>{{/link-to}}
     </ul>
+    <ul class="nav navbar-nav navbar-right">
+      {{#if session.isAuthenticated}}
+          <li>
+            <a href="#" {{action invalidateSession}}>Logout</a>
+      {{else}}
+          {{#link-to 'login' tagName="li" href=false}}<a href="#">Login</a>{{/link-to}}
+      {{/if}}
+    </ul>
   </div>
 </div>
