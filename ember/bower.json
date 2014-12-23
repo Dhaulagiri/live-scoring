@@ -21,5 +21,9 @@
   },
   "resolutions": {
     "handlebars": "~1.3.0"
+  },
+  "devDependencies": {
+    "ember-easyForm": "http://builds.dockyard.com.s3.amazonaws.com/ember-easyForm/canary/ember-easyForm.min.js",
+    "ember-validations": "http://builds.dockyard.com.s3.amazonaws.com/ember-validations/ember-validations-latest.js"
   }
 }
